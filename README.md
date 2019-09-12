@@ -1,7 +1,8 @@
 ### CapRover - Full Steps to install Sample Apps
+Only the sample apps were updated. All the other caprover files were untouched.
 
 
-### Rails complex deploy
+### Version 1.0     Ruby_complex deployed
 - Deploy and run a complex rails application in minutes. This includes configurations, sending code to server, builds, getting an SSL certificate, install it, update nginx, running caprover definition file.
 - Generic Caprover definition file which covers most rails apps
 - Detailed explanations of every action on caporover UI and bash
@@ -12,9 +13,10 @@ https://github.com/activeadmin/demo.activeadmin.info
 
 For more details and documentation, please visit https://CapRover.com/
 
-## Open Source
 
-Only the sample apps were updated. All the other caprover files were untouched.
+
+___
+
 
 
 
