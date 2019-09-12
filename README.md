@@ -1,27 +1,43 @@
-### CapRover (formerly CaptainDuckDuck)
-#### Easiest app/database deployment platform and webserver package for your NodeJS, Python, PHP, Ruby, Go applications. No Docker, nginx knowledge required! &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fcaprover%2Fcaprover&via=cap_rover&text=I%20found%20the%20easiest%20webserver%20package%20for%20NodeJS%2C%20PHP%2C%20MySQL%2C%20WordPress%20and%20everything%21&hashtags=CapRover%2Cnodejs%2Cdocker%2Cnginx%2Cwebdev)
+### CapRover - Full Steps to install Sample Apps
 
-[![YouTube](https://raw.githubusercontent.com/caprover/caprover-website/master/graphics/screenshots-video-small.gif)](https://www.youtube.com/watch?v=XDrTmGSDW3s)
 
-### Seriously! Who should care about CapRover?
-- A [web] developer who does not like spending hours and days setting up a server, build tools, sending code to server, build it, get an SSL certificate, install it, update nginx over and over again.
-- A developer who uses expensive services like Heroku, Microsoft Azure and etc. And is interested in reducing their cost by 4x (Heroku charges 25$/month for their 1gb instance, the same server is 5$ on vultr!!)
-- Someone who prefers to write more of `showResults(getUserList())` and not much of `$ apt-get install libstdc++6 > /dev/null`
-- A developer who likes installing MySQL, MongoDB and etc on their server by selecting from a dropdown and clicking on install!
-- How much server/docker/linux knowledge is required to set up a CapRover server? Answer: Knowledge of Copy & Paste!! Head over to "Getting Started" for information on what to copy & paste ;-)
+### Rails complex deploy
+- Deploy and run a complex rails application in minutes. This includes configurations, sending code to server, builds, getting an SSL certificate, install it, update nginx, running caprover definition file.
+- Generic Caprover definition file which covers most rails apps
+- Detailed explanations of every action on caporover UI and bash
+- Example was taken from Active Admin with full data
+https://github.com/activeadmin/demo.activeadmin.info
 
 ## Learn More!
 
 For more details and documentation, please visit https://CapRover.com/
 
-## Contributors
+## Open Source
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/caprover/caprover/graphs/contributors"><img src="https://opencollective.com/caprover/contributors.svg?width=690&button=false" /></a>
+Only the sample apps were updated. All the other caprover files were untouched.
 
 
-## Backers
 
-Thank you to all our backers! 🙏 
+### Rails complex deploy Steps :
 
-[![Donate](https://opencollective.com/caprover/donate/button.png?color=blue)](https://opencollective.com/caprover#backer)
+Create a new droplet (could be DigitalOcean or other host)
+
+Install caprover on it and add the domain (as instructed in docs)
+
+Add first postgres as a single click app. Full name : postgres-db
+
+Create a new app : Full name : run
+
+Inside the app run, go to App Configs and add these 2 Environmental Variables:
+
+SECRET_KEY_BASE			anything
+
+SECRET_KEY_BASE			true
+
+Inside the app run, go to Deployment and with method 2 deploy the ruby_complex.tar file
+
+SSH to the server and run this 2 bash commands:
+
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--run | awk 'FNR == 2 {print $1}') rake db:migrate`
+
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--run | awk 'FNR == 2 {print $1}') rails db:seed`
