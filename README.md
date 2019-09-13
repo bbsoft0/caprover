@@ -24,7 +24,7 @@ ___
 
 Create a new droplet (could be DigitalOcean or other host)
 
-Install caprover on it and add the domain (as instructed in docs)
+Install caprover on it, go to UI and upgrade Caprover, then add the domain (as instructed in docs)
 
 Add first postgres as a single click app. Full name : postgres-db
 
@@ -32,9 +32,11 @@ Create a new app : Full name : run
 
 Inside the app run, go to App Configs and add these 2 Environmental Variables:
 
-SECRET_KEY_BASE			anything
+SECRET_KEY_BASE							anything
 
-SECRET_KEY_BASE			true
+RAILS_SERVE_STATIC_FILES				true
+
+DOMAIN									run.snipermed.ro
 
 Inside the app run, go to Deployment and with method 2 deploy the ruby_complex.tar file
 
