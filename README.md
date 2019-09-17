@@ -42,12 +42,15 @@ Inside the app admin, go to Deployment and with method 2 deploy the ruby_complex
 
 SSH to the server and run this 2 bash commands:
 
-- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--run | awk 'FNR == 2 {print $1}') rake db:migrate`
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--admin | awk 'FNR == 2 {print $1}') rake db:migrate`
 
-- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--run | awk 'FNR == 2 {print $1}') rails db:seed`
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--admin | awk 'FNR == 2 {print $1}') rails db:seed`
 
+Sometimes you have to use 
 
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--admin | awk 'FNR == 2 {print $1}') bundle exec rake db:create`
 
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--admin | awk 'FNR == 2 {print $1}') bundle exec rake assets:precompile`
 
 ___
 
@@ -80,4 +83,5 @@ Inside the app pghero, go to Deployment and with method 5 deploy this captain-de
 `
 
 After instalation, postgres.conf can be found and edited at 
+
 /var/lib/docker/volumes/captain--postgres-db-data/_data
