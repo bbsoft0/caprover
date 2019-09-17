@@ -79,4 +79,5 @@ Inside the app pghero, go to Deployment and with method 5 deploy this captain-de
 }
 `
 
-
+After instalation, postgres.conf can be found and edited at 
+/var/lib/docker/volumes/captain--postgres-db-data/_data
