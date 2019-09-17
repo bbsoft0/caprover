@@ -69,7 +69,7 @@ RAILS_LOG_TO_STDOUT		disabled
 
 You should ssh to droplet and set the ufw to allow port
 
-sudo ufw allow 3005
+- `sudo ufw allow 3005`
 
 Inside the app pghero, go to Deployment and with method 5 deploy this captain-definition file :
 
