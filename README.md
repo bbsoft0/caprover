@@ -85,3 +85,28 @@ Inside the app pghero, go to Deployment and with method 5 deploy this captain-de
 After instalation, postgres.conf can be found and edited at 
 
 /var/lib/docker/volumes/captain--postgres-db-data/_data
+
+___
+
+
+
+### General commands :
+
+RAILS_LOG_TO_STDOUT		true
+
+If this parameter is set in rails app, the development.log/production.log 
+
+will be redirected to caprover's app logs.
+
+Other command for logs in command line : 
+
+- `find / -type f -name "*.log" -cmin -60`
+
+Very used commands:
+
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--app | awk 'FNR == 2 {print $1}') bundle exec rake db:migrate`
+
+- `sudo docker exec -ti $(docker container ls --filter name=srv-captain--app | awk 'FNR == 2 {print $1}') bundle exec rake assets:precompile`
+
+
+
