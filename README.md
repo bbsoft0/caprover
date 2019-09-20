@@ -92,11 +92,21 @@ ___
 
 ### General commands :
 
-RAILS_LOG_TO_STDOUT		true
+Parameters for ruby on rails apps :
 
 If this parameter is set in rails app, the development.log/production.log 
 
 will be redirected to caprover's app logs.
+
+RAILS_LOG_TO_STDOUT		true
+
+POSTGRES_USER
+
+POSTGRES_PASSWORD
+
+RAILS_ENV	production
+
+RAILS_SERVE_STATIC_FILES	true
 
 Other command for logs in command line : 
 
