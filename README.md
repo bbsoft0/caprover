@@ -13,6 +13,13 @@ https://github.com/activeadmin/demo.activeadmin.info
 
 For more details and documentation, please visit https://CapRover.com/
 
+## VSCode Debug
+
+Need to create launch.json with environment variables for each project
+
+Bash printf command which returns the env details to place into launch.json:
+
+- `printf "\n\"env\": {\n  \"PATH\": \"$PATH\",\n  \"GEM_HOME\": \"$GEM_HOME\",\n  \"GEM_PATH\": \"$GEM_PATH\",\n  \"RUBY_VERSION\": \"$RUBY_VERSION\"\n}\n\n"`
 
 
 ___
